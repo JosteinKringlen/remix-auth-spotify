@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": [".prettierrc", "*.json", ".eslintrc"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}
