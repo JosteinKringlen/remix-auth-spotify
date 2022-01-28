@@ -5,16 +5,25 @@ on:
     types: [published]
 
 jobs:
-  build:
+  publish-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm run build
-      - run: npm publish --access public
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish package(s)
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
