@@ -13,6 +13,18 @@ The strategy supports refreshing expired access tokens. The logic for this is ~~
 
 ## How to use
 
+### Create application in Spotify developer dashboard
+
+1. Go to the [Spotify developer dashboard](https://developer.spotify.com/dashboard/applications) and sign in with your account
+2. Click `Create an app` and give the application a suitable name and description
+3. Click `Edit settings` and add
+   - `http://localhost:3000` under `Website`
+   - `http://localhost:3000/auth/spotify/callback` under `Redirect URIs` (remember to hit `Add`)
+4. Hit `Save` at the bottom of the modal
+5. Grab your client ID and secret from the dashboard overview, and save them as env variables
+
+Remember to update `Website` and `Redirect URIs` if/when deploying your app.
+
 ### Install remix-auth and the Spotify strategy
 
 ``` bash
