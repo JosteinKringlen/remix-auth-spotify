@@ -41,7 +41,7 @@
     "@commitlint/config-conventional": "16.2.1",
     "@remix-run/node": "1.2.2",
     "@remix-run/react": "1.2.2",
-    "@remix-run/server-runtime": "1.2.1",
+    "@remix-run/server-runtime": "1.2.2",
     "@types/jest": "27.4.0",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
