@@ -5,5 +5,12 @@
     ":automergeLinters",
     ":automergeTypes",
     ":automergePr"
+  ],
+  "packageRules": [
+    {
+      "extends": "monorepo:react",
+      "matchUpdateTypes": ["digest", "patch", "minor", "major"],
+      "groupName": "react monorepo"
+    }
   ]
 }
