@@ -44,7 +44,7 @@ SPOTIFY_CALLBACK_URL="your callback url" # e.g. http://localhost:3000/auth/spoti
 
 ```TypeScript
 // app/services/session.server.ts
-import { createCookieSessionStorage } from 'remix';
+import { createCookieSessionStorage } from '@remix-run/node';
 
 export const sessionStorage = createCookieSessionStorage({
     cookie: {
@@ -116,8 +116,8 @@ authenticator.use(spotifyStrategy);
 
 ```TSX
 // app/routes/auth/spotify.tsx
-import type { ActionFunction, LoaderFunction } from 'remix'
-import { redirect } from 'remix';
+import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
 
 import { authenticator } from '~/services/auth.server';
 
@@ -130,7 +130,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 ```TSX
 // app/routes/auth/spotify.callback.tsx
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction } from '@remix-run/node';
 import { authenticator } from '~/services/auth.server';
 
 export const loader: LoaderFunction = ({ request }) => {
@@ -143,8 +143,8 @@ export const loader: LoaderFunction = ({ request }) => {
 
 ```TSX
 // app/routes/logout.tsx
-import type { ActionFunction, LoaderFunction } from 'remix';
-import { json, redirect } from 'remix';
+import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import { json, redirect } from '@remix-run/node';
 
 import { destroySession, getSession } from '~/services/session.server';
 
@@ -169,8 +169,8 @@ export const loader: LoaderFunction = () => {
 
 ```TSX
 // app/routes/index.tsx
-import type { LoaderFunction } from 'remix';
-import { Form, useLoaderData } from 'remix';
+import type { LoaderFunction } from '@remix-run/node';
+import { Form, useLoaderData } from '@remix-run/react';
 import type { Session } from 'remix-auth-spotify';
 
 import { spotifyStrategy } from '~/services/auth.server';
@@ -201,4 +201,5 @@ export default function Index() {
         </div>
     );
 }
+
 ```
