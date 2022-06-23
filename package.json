@@ -13,8 +13,7 @@
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --config=config/jest.config.ts --passWithNoTests",
-    "coverage": "npm run test -- --coverage",
-    "prepare": "husky install"
+    "coverage": "npm run test -- --coverage"
   },
   "keywords": [
     "remix",
@@ -37,8 +36,6 @@
     "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.17.12",
     "@babel/preset-typescript": "7.17.12",
-    "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.2",
     "@remix-run/node": "1.6.1",
     "@remix-run/react": "1.6.1",
     "@remix-run/server-runtime": "1.6.1",
@@ -53,7 +50,6 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "eslint-plugin-unicorn": "42.0.0",
-    "husky": "8.0.1",
     "jest": "28.1.1",
     "jest-fetch-mock": "3.0.3",
     "prettier": "2.7.1",
