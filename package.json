@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",
     "babel-jest": "28.1.1",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.18.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-jest": "26.5.3",
@@ -60,5 +61,10 @@
   "dependencies": {
     "remix-auth": "^3.2.2",
     "remix-auth-oauth2": "^1.2.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
