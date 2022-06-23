@@ -12,8 +12,10 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --config=config/jest.config.ts --passWithNoTests",
-    "coverage": "npm run test -- --coverage",
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
+    "test:snap": "npm run test -- --update",
+    "test:coverage": "npm run test -- --coverage",
     "semantic-release": "semantic-release"
   },
   "keywords": [
