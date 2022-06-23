@@ -1,9 +1,10 @@
 import { createCookieSessionStorage } from '@remix-run/node';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { SpotifyStrategy } from '../src';
 
-describe(SpotifyStrategy, () => {
-    let verify = jest.fn();
+describe('SpotifyStrategy', () => {
+    let verify = vi.fn();
     // You will probably need a sessionStorage to test the strategy.
     let sessionStorage = createCookieSessionStorage({
         cookie: { secrets: ['s3cr3t'] },
@@ -18,8 +19,7 @@ describe(SpotifyStrategy, () => {
 
     let request: Request;
     beforeEach(() => {
-        jest.resetAllMocks();
-        // jestFetchMock.resetMocks();
+        vi.resetAllMocks();
         request = new Request('https://example.app/auth/spotify');
     });
 
