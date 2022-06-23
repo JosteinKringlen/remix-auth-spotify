@@ -5,7 +5,6 @@ module.exports = {
     plugins: [
         '@typescript-eslint',
         'unicorn',
-        'jest',
         'prettier',
         'simple-import-sort',
     ],
