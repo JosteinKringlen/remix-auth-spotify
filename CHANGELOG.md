@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.2...v1.2.3) (2022-06-23)
+
+
+### Bug Fixes
+
+* **ci:** run build in release workflow ([68215d3](https://github.com/JosteinKringlen/remix-auth-spotify/commit/68215d336cd3b8d4f3cd4277a3c590d897535695))
+
 ## [1.2.2](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.1...v1.2.2) (2022-06-23)
 
 
