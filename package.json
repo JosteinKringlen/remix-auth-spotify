@@ -4,7 +4,7 @@
     "url": "https://github.com/JosteinKringlen/remix-auth-spotify"
   },
   "author": "Jostein Kringlen",
-  "version": "1.2.1",
+  "version": "0.0.0-development",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
@@ -13,7 +13,8 @@
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --config=config/jest.config.ts --passWithNoTests",
-    "coverage": "npm run test -- --coverage"
+    "coverage": "npm run test -- --coverage",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "remix",
@@ -39,6 +40,8 @@
     "@remix-run/node": "1.6.1",
     "@remix-run/react": "1.6.1",
     "@remix-run/server-runtime": "1.6.1",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/jest": "28.1.3",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",
@@ -55,6 +58,7 @@
     "jest-fetch-mock": "3.0.3",
     "prettier": "2.7.1",
     "react": "18.2.0",
+    "semantic-release": "^19.0.3",
     "ts-node": "10.8.1",
     "typescript": "4.7.4"
   },
