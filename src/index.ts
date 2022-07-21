@@ -291,6 +291,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
             return this.success(
                 {
                     ...session,
+                    accessToken: refreshedToken.access_token,
                     expiresAt: Date.now() + refreshedToken.expires_in * 1000,
                 },
                 req,
