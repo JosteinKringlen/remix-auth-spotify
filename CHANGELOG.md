@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.4...v1.2.5) (2022-07-21)
+
+
+### Bug Fixes
+
+* **token refreshing:** actually pass refreshed token to session ([#172](https://github.com/JosteinKringlen/remix-auth-spotify/issues/172)) ([d180743](https://github.com/JosteinKringlen/remix-auth-spotify/commit/d180743be449823c98c27fdf3ec7f2199010441c))
+
 ## [1.2.3](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.2...v1.2.3) (2022-06-23)
 
 
