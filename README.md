@@ -116,39 +116,42 @@ authenticator.use(spotifyStrategy);
 
 ```TSX
 // app/routes/auth/spotify.tsx
-import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import type { ActionArgs } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
 import { authenticator } from '~/services/auth.server';
 
-export const loader: LoaderFunction = () => redirect('/login');
+export function loader() {
+    return redirect('/login');
+}
 
-export const action: ActionFunction = async ({ request }) => {
+export async function action({ request }: ActionArgs) {
     return await authenticator.authenticate('spotify', request);
-};
+}
 ```
 
 ```TSX
 // app/routes/auth/spotify.callback.tsx
-import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderArgs } from '@remix-run/node';
+
 import { authenticator } from '~/services/auth.server';
 
-export const loader: LoaderFunction = ({ request }) => {
+export function loader({ request }: LoaderArgs) {
     return authenticator.authenticate('spotify', request, {
         successRedirect: '/',
         failureRedirect: '/login',
     });
-};
+}
 ```
 
 ```TSX
 // app/routes/logout.tsx
-import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import type { ActionArgs } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
 
 import { destroySession, getSession } from '~/services/session.server';
 
-export const action: ActionFunction = async ({ request }) => {
+export async function action({ request }: ActionArgs) {
     return redirect('/', {
         headers: {
             'Set-Cookie': await destroySession(
@@ -156,11 +159,11 @@ export const action: ActionFunction = async ({ request }) => {
             ),
         },
     });
-};
+}
 
-export const loader: LoaderFunction = () => {
+export function loader() {
     throw json({}, { status: 404 });
-};
+}
 ```
 
 ### Use the strategy
@@ -169,18 +172,17 @@ export const loader: LoaderFunction = () => {
 
 ```TSX
 // app/routes/index.tsx
-import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderArgs } from '@remix-run/node';
 import { Form, useLoaderData } from '@remix-run/react';
-import type { Session } from 'remix-auth-spotify';
 
 import { spotifyStrategy } from '~/services/auth.server';
 
-export const loader: LoaderFunction = async ({ request }) => {
+export async function loader({ request }: LoaderArgs) {
     return spotifyStrategy.getSession(request);
-};
+}
 
 export default function Index() {
-    const data = useLoaderData<Session>();
+    const data = useLoaderData<typeof loader>();
     const user = data?.user;
 
     return (
@@ -201,5 +203,4 @@ export default function Index() {
         </div>
     );
 }
-
 ```
