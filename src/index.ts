@@ -269,6 +269,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
         );
         const session: Session | null = sessionCookie.get(this.sessionKey);
         const options = {
+            name: this.name,
             sessionKey: this.sessionKey,
             sessionStrategyKey: this.sessionStrategyKey,
             sessionErrorKey: this.sessionErrorKey,
