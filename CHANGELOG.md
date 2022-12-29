@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.6...v1.2.7) (2022-12-29)
+
+
+### Bug Fixes
+
+* **deps:** update remix-auth packages ([#286](https://github.com/JosteinKringlen/remix-auth-spotify/issues/286)) ([54f0d1d](https://github.com/JosteinKringlen/remix-auth-spotify/commit/54f0d1d21c1b36ea64694edba9397e9856411b0a))
+
 ## [1.2.5](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.4...v1.2.5) (2022-07-21)
 
 
