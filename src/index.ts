@@ -13,6 +13,7 @@ export interface SpotifyStrategyOptions {
     scope?: string;
     sessionStorage: SessionStorage;
     sessionKey?: string;
+    sessionStrategyKey?: string;
     sessionErrorKey?: string;
 }
 
@@ -93,6 +94,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
     private readonly userInfoURL = 'https://api.spotify.com/v1/me';
     private readonly sessionStorage: SessionStorage;
     readonly sessionKey: string;
+    readonly sessionStrategyKey: string;
     readonly sessionErrorKey: string;
 
     constructor(
@@ -103,6 +105,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
             scope,
             sessionStorage,
             sessionKey,
+            sessionStrategyKey,
             sessionErrorKey,
         }: SpotifyStrategyOptions,
         verify: StrategyVerifyCallback<
@@ -123,6 +126,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
         this.scope = scope ?? 'user-read-email';
         this.sessionStorage = sessionStorage;
         this.sessionKey = sessionKey ?? 'spotify:session';
+        this.sessionStrategyKey = sessionStrategyKey ?? 'spotify';
         this.sessionErrorKey = sessionErrorKey ?? 'spotify:error';
     }
 
@@ -266,6 +270,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
         const session: Session | null = sessionCookie.get(this.sessionKey);
         const options = {
             sessionKey: this.sessionKey,
+            sessionStrategyKey: this.sessionStrategyKey,
             sessionErrorKey: this.sessionErrorKey,
             ...checkOptions,
         };
