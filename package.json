@@ -61,7 +61,7 @@
     "vitest": "0.26.2"
   },
   "dependencies": {
-    "remix-auth": "3.2.2",
+    "remix-auth": "3.4.0",
     "remix-auth-oauth2": "1.2.2"
   },
   "config": {
