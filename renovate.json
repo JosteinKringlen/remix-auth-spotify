@@ -5,20 +5,5 @@
     ":automergeLinters",
     ":automergeTypes",
     ":automergePr"
-  ],
-  "packageRules": [
-    {
-      "extends": "monorepo:react",
-      "matchUpdateTypes": ["digest", "patch", "minor", "major"],
-      "groupName": "react monorepo"
-    },
-    {
-      "matchPackagePatterns": ["^@remix-run"],
-      "groupName": "remix packages"
-    },
-    {
-      "matchPackagePatterns": ["^remix-auth"],
-      "groupName": "remix-auth packages"
-    }
   ]
 }
