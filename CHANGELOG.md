@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.7...v1.2.8) (2023-01-01)
+
+
+### Bug Fixes
+
+* **readme:** use optional chaining when setting img url on user object ([830b5c2](https://github.com/JosteinKringlen/remix-auth-spotify/commit/830b5c2b932b7ec4d87a83b40a92f48420bd99ee))
+
 ## [1.2.7](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.6...v1.2.7) (2022-12-29)
 
 
