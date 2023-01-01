@@ -99,7 +99,7 @@ export const spotifyStrategy = new SpotifyStrategy(
             id: profile.id,
             email: profile.emails[0].value,
             name: profile.displayName,
-            image: profile.__json.images?.[0].url,
+            image: profile.__json.images?.[0]?.url,
         },
     }),
 );
