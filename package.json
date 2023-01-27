@@ -51,7 +51,7 @@
     "eslint": "8.32.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-simple-import-sort": "9.0.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-unicorn": "45.0.2",
     "prettier": "2.8.3",
     "react": "18.2.0",
