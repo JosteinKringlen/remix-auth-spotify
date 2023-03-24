@@ -42,7 +42,7 @@
     "@remix-run/node": "1.14.3",
     "@remix-run/react": "1.14.3",
     "@remix-run/server-runtime": "1.14.3",
-    "@semantic-release/changelog": "6.0.2",
+    "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
