@@ -16,7 +16,8 @@
     "test:watch": "vitest --watch",
     "test:snap": "npm run test -- --update",
     "test:coverage": "npm run test -- --coverage",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [
     "remix",
