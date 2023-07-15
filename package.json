@@ -52,7 +52,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unicorn": "^47.0.0",
+    "eslint-plugin-unicorn": "^48.0.0",
     "prettier": "^2.8.7",
     "react": "^18.2.0",
     "remix-auth": "^3.4.0",
