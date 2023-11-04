@@ -6,7 +6,7 @@
     "target": "ES2019",
     "strict": true,
     "skipLibCheck": true,
-    "importsNotUsedAsValues": "error",
+    "verbatimModuleSyntax": true,
 
     // tsup handles building
     "noEmit": true
