@@ -93,5 +93,5 @@ jobs:
             const packageBumps = await getBumps(files);
             await createChangeset(fileName, packageBumps, packageNames);
             await exec.exec("git", ["add", fileName]);
-            await exec.exec("git commit -m \"chore: add changeset\"");
-            await exec.exec("git push");
+            await exec.exec("git commit -C HEAD --amend --no-edit");
+            await exec.exec("git push --force");
