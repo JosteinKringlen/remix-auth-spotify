@@ -90,7 +90,7 @@ export class SpotifyStrategy extends OAuth2Strategy<
 > {
     name = 'spotify';
 
-    private scope: string;
+    protected scope: string;
     private readonly userInfoURL = 'https://api.spotify.com/v1/me';
     private readonly sessionStorage: SessionStorage;
     readonly sessionKey: string;
