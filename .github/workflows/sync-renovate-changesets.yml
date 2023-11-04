@@ -18,8 +18,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email action@github.com
-          git config --global user.name 'Github changeset workflow'
+          git config --global user.email renovate-changeset-action@github.com
+          git config --global user.name 'Github Changeset Workflow'
 
       - name: Generate changeset
         uses: actions/github-script@v6
@@ -41,7 +41,7 @@ jobs:
             async function createChangeset(fileName, packageBumps, packages) {
               let message = "";
               for (const [pkg, bump] of packageBumps) {
-                message = message + `Updated dependency \`${pkg}\` to \`${bump}\`.\n`;
+                message = message + `Update dependency \`${pkg}\` to \`${bump}\`.\n`;
               }
 
               const pkgs = packages.map((pkg) => `'${pkg}': patch`).join("\n");
@@ -93,5 +93,5 @@ jobs:
             const packageBumps = await getBumps(files);
             await createChangeset(fileName, packageBumps, packageNames);
             await exec.exec("git", ["add", fileName]);
-            await exec.exec("git commit -C HEAD --amend --no-edit");
-            await exec.exec("git push --force");
+            await exec.exec("git commit -m chore: add changeset");
+            await exec.exec("git push");
