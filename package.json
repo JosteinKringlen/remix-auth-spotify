@@ -6,6 +6,7 @@
   "author": "Jostein Kringlen",
   "version": "1.3.0",
   "main": "./build/index.js",
+  "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.json",
@@ -26,6 +27,18 @@
     "strategy"
   ],
   "license": "MIT",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./build/index.d.mts",
+        "require": "./build/index.d.ts",
+        "default": "./build/index.d.mts"
+      },
+      "import": "./build/index.mjs",
+      "require": "./build/index.js",
+      "default": "./build/index.mjs"
+    }
+  },
   "files": [
     "build",
     "package.json",
