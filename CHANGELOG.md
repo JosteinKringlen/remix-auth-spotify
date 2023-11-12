@@ -7,11 +7,11 @@
 -   222980b: Update docs
 -   9ec2556: Updated dependency `typescript` to `^5.0.0`.
 -   56e1bbb: Update dependency `@remix-run/server-runtime` to `^2.0.0`.
--   19c4a67: don't minify bundle
+-   19c4a67: Don't minify bundle
 -   a853146: Use `tsup` for building both CJS and ESM
--   94bb8c0: fix(deps): update dependency remix-auth-oauth2 to v1.11.0
-
-    fix(index): change `scope` from `private` to `protected`
+-   94bb8c0: Bump `remix-auth-oauth`
+    - Update to v1.11.0
+    - Change `scope` from `private` to `protected`
 
 ## 1.3.0
 
