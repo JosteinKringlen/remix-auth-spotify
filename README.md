@@ -115,8 +115,8 @@ authenticator.use(spotifyStrategy);
 ### Setup authentication routes
 
 ```TSX
-// app/routes/auth/spotify.tsx
-import type { ActionArgs } from '@remix-run/node';
+// app/routes/auth.spotify.tsx
+import type { ActionFunctionArgs } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
 import { authenticator } from '~/services/auth.server';
@@ -125,18 +125,18 @@ export function loader() {
     return redirect('/login');
 }
 
-export async function action({ request }: ActionArgs) {
+export async function action({ request }: ActionFunctionArgs) {
     return await authenticator.authenticate('spotify', request);
 }
 ```
 
 ```TSX
-// app/routes/auth/spotify.callback.tsx
-import type { LoaderArgs } from '@remix-run/node';
+// app/routes/auth.spotify.callback.tsx
+import type { LoaderFunctionArgs } from '@remix-run/node';
 
 import { authenticator } from '~/services/auth.server';
 
-export function loader({ request }: LoaderArgs) {
+export function loader({ request }: LoaderFunctionArgs) {
     return authenticator.authenticate('spotify', request, {
         successRedirect: '/',
         failureRedirect: '/login',
@@ -146,12 +146,12 @@ export function loader({ request }: LoaderArgs) {
 
 ```TSX
 // app/routes/logout.tsx
-import type { ActionArgs } from '@remix-run/node';
+import type { ActionFunctionArgs } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
 
 import { destroySession, getSession } from '~/services/session.server';
 
-export async function action({ request }: ActionArgs) {
+export async function action({ request }: ActionFunctionArgs) {
     return redirect('/', {
         headers: {
             'Set-Cookie': await destroySession(
@@ -171,13 +171,13 @@ export function loader() {
 > `spotifyStrategy.getSession()` works similar to `authenticator.isAuthenticated()`, only it handles refreshing tokens. If you don't need to refresh tokens in your app, feel free to use `authenticator.isAuthenticated()` instead.
 
 ```TSX
-// app/routes/index.tsx
-import type { LoaderArgs } from '@remix-run/node';
+// app/routes/_index.tsx
+import type { LoaderFunctionArgs } from '@remix-run/node';
 import { Form, useLoaderData } from '@remix-run/react';
 
 import { spotifyStrategy } from '~/services/auth.server';
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
     return spotifyStrategy.getSession(request);
 }
 
