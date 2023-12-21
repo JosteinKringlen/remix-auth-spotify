@@ -49,6 +49,7 @@
     "remix-auth": ">=3.2.2"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "0.13.5",
     "@babel/core": "7.23.6",
     "@babel/preset-env": "7.23.6",
     "@babel/preset-react": "7.23.3",
