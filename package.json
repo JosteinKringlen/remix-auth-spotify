@@ -14,6 +14,7 @@
     "typecheck:attw": "attw --pack .",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
+    "lint:publint": "publint",
     "test": "vitest --run",
     "test:watch": "vitest --watch",
     "test:snap": "npm run test -- --update",
