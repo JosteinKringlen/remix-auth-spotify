@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc",
+    "typecheck:attw": "attw --pack .",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
     "test": "vitest --run",
