@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "config:base",
-    ":automergeMinor",
-    ":automergeLinters",
-    ":automergeTypes",
-    ":automergePr"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:js-lib", ":label(deps)"],
+  "gitIgnoredAuthors": ["github+renovate@kringlen.no"]
 }
