@@ -11,8 +11,10 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc",
+    "typecheck:attw": "attw --pack .",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "npm run lint -- --fix",
+    "lint:publint": "publint",
     "test": "vitest --run",
     "test:watch": "vitest --watch",
     "test:snap": "npm run test -- --update",
@@ -49,6 +51,7 @@
     "remix-auth": ">=3.2.2"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "0.13.5",
     "@babel/core": "7.23.6",
     "@babel/preset-env": "7.23.6",
     "@babel/preset-react": "7.23.3",
@@ -67,6 +70,7 @@
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-unicorn": "50.0.1",
     "prettier": "3.1.1",
+    "publint": "0.2.6",
     "react": "18.2.0",
     "remix-auth": "3.6.0",
     "ts-node": "10.9.2",

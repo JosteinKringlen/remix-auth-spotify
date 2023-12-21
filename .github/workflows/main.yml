@@ -5,7 +5,7 @@ on:
     branches:
       - main
   pull_request:
-    branches: 
+    branches:
       - main
 
 jobs:
@@ -83,3 +83,45 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+  arethetypeswrong:
+    name: ʦ Are The Types Wrong?
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Install deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🏗️ Build
+        run: npm run build
+
+      - name: ʦ ATTW
+        run: npm run typecheck:attw
+
+  publint:
+    name: 📖 Publint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Install deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🏗️ Build
+        run: npm run build
+
+      - name: 📖 Publint
+        run: npm run lint:publint
