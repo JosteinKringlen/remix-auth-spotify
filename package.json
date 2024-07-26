@@ -79,7 +79,7 @@
     "vitest": "1.1.0"
   },
   "dependencies": {
-    "remix-auth-oauth2": "^1.6.0"
+    "remix-auth-oauth2": "^2.0.0"
   },
   "config": {
     "commitizen": {
