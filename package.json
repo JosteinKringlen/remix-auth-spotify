@@ -21,13 +21,7 @@
     "test:coverage": "npm run test -- --coverage",
     "release": "npm run build && changeset publish"
   },
-  "keywords": [
-    "remix",
-    "remix-auth",
-    "auth",
-    "authentication",
-    "strategy"
-  ],
+  "keywords": ["remix", "remix-auth", "auth", "authentication", "strategy"],
   "license": "MIT",
   "exports": {
     ".": {
@@ -41,11 +35,7 @@
       "default": "./build/index.mjs"
     }
   },
-  "files": [
-    "build",
-    "package.json",
-    "README.md"
-  ],
+  "files": ["build", "package.json", "README.md"],
   "peerDependencies": {
     "@remix-run/server-runtime": ">=1.1.0",
     "remix-auth": ">=3.2.2"

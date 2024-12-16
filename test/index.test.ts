@@ -4,9 +4,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { SpotifyStrategy } from '../src';
 
 describe('SpotifyStrategy', () => {
-    let verify = vi.fn();
+    const verify = vi.fn();
     // You will probably need a sessionStorage to test the strategy.
-    let sessionStorage = createCookieSessionStorage({
+    const sessionStorage = createCookieSessionStorage({
         cookie: { secrets: ['s3cr3t'] },
     });
 
@@ -24,7 +24,7 @@ describe('SpotifyStrategy', () => {
     });
 
     it('should allow changing the scope', async () => {
-        let strategy = new SpotifyStrategy(
+        const strategy = new SpotifyStrategy(
             {
                 ...strategyConf,
                 scope: 'custom',
@@ -38,18 +38,18 @@ describe('SpotifyStrategy', () => {
             });
         } catch (error) {
             if (!(error instanceof Response)) throw error;
-            let location = error.headers.get('Location');
+            const location = error.headers.get('Location');
 
             if (!location) throw new Error('No redirect header');
 
-            let redirectUrl = new URL(location);
+            const redirectUrl = new URL(location);
 
             expect(redirectUrl.searchParams.get('scope')).toBe('custom');
         }
     });
 
     it('should have the scope `user-read-email` as default', async () => {
-        let strategy = new SpotifyStrategy(strategyConf, verify);
+        const strategy = new SpotifyStrategy(strategyConf, verify);
 
         try {
             await strategy.authenticate(request, sessionStorage, {
@@ -57,11 +57,11 @@ describe('SpotifyStrategy', () => {
             });
         } catch (error) {
             if (!(error instanceof Response)) throw error;
-            let location = error.headers.get('Location');
+            const location = error.headers.get('Location');
 
             if (!location) throw new Error('No redirect header');
 
-            let redirectUrl = new URL(location);
+            const redirectUrl = new URL(location);
 
             expect(redirectUrl.searchParams.get('scope')).toBe(
                 'user-read-email',
@@ -70,7 +70,7 @@ describe('SpotifyStrategy', () => {
     });
 
     it('should correctly format the authorization URL', async () => {
-        let strategy = new SpotifyStrategy(strategyConf, verify);
+        const strategy = new SpotifyStrategy(strategyConf, verify);
 
         try {
             await strategy.authenticate(request, sessionStorage, {
@@ -79,11 +79,11 @@ describe('SpotifyStrategy', () => {
         } catch (error) {
             if (!(error instanceof Response)) throw error;
 
-            let location = error.headers.get('Location');
+            const location = error.headers.get('Location');
 
             if (!location) throw new Error('No redirect header');
 
-            let redirectUrl = new URL(location);
+            const redirectUrl = new URL(location);
 
             expect(redirectUrl.hostname).toBe('accounts.spotify.com');
             expect(redirectUrl.pathname).toBe('/authorize');
