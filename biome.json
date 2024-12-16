@@ -1,112 +1,28 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true, "defaultBranch": "main" },
 	"files": { "ignoreUnknown": false, "ignore": [] },
 	"formatter": {
 		"enabled": true,
-		"useEditorconfig": true,
-		"formatWithErrors": false,
 		"indentStyle": "space",
-		"indentWidth": 4,
-		"lineEnding": "lf",
-		"lineWidth": 80,
-		"attributePosition": "auto",
-		"bracketSpacing": true
+		"indentWidth": 4
 	},
 	"organizeImports": { "enabled": true },
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": false,
-			"complexity": {
-				"noBannedTypes": "error",
-				"noForEach": "error",
-				"noStaticOnlyClass": "error",
-				"noUselessSwitchCase": "error",
-				"noUselessTypeConstraint": "error",
-				"useDateNow": "error",
-				"useFlatMap": "error"
-			},
-			"correctness": {
-				"noInvalidBuiltinInstantiation": "error",
-				"noPrecisionLoss": "error",
-				"noUnusedVariables": "error",
-				"useArrayLiterals": "off"
-			},
-			"style": {
-				"noNamespace": "error",
-				"noNegationElse": "off",
-				"noNonNullAssertion": "off",
-				"noVar": "off",
-				"useAsConstAssertion": "error",
-				"useBlockStatements": "off",
-				"useConst": "off",
-				"useExplicitLengthCheck": "error",
-				"useForOf": "error",
-				"useNodejsImportProtocol": "off",
-				"useNumberNamespace": "error",
-				"useThrowNewError": "error"
-			},
-			"suspicious": {
-				"noExplicitAny": "error",
-				"noExtraNonNullAssertion": "error",
-				"noMisleadingInstantiator": "error",
-				"noThenProperty": "error",
-				"noUnsafeDeclarationMerging": "error",
-				"useErrorMessage": "error",
-				"useIsArray": "error",
-				"useNumberToFixedDigitsArgument": "error"
-			}
+			"recommended": true
 		}
 	},
 	"javascript": {
 		"formatter": {
-			"jsxQuoteStyle": "double",
-			"quoteProperties": "asNeeded",
-			"trailingCommas": "all",
-			"semicolons": "asNeeded",
-			"arrowParentheses": "always",
-			"bracketSameLine": false,
-			"quoteStyle": "single",
-			"attributePosition": "auto",
-			"bracketSpacing": true
+			"semicolons": "always",
+			"quoteStyle": "single"
 		}
 	},
 	"overrides": [
 		{
-			"include": ["*.ts", "*.tsx", "*.mts", "*.cts"],
-			"linter": {
-				"rules": {
-					"correctness": {
-						"noConstAssign": "off",
-						"noGlobalObjectCalls": "off",
-						"noInvalidConstructorSuper": "off",
-						"noNewSymbol": "off",
-						"noSetterReturn": "off",
-						"noUndeclaredVariables": "off",
-						"noUnreachable": "off",
-						"noUnreachableSuper": "off"
-					},
-					"style": {
-						"noArguments": "error",
-						"noVar": "error",
-						"useConst": "error"
-					},
-					"suspicious": {
-						"noDuplicateClassMembers": "off",
-						"noDuplicateObjectKeys": "off",
-						"noDuplicateParameters": "off",
-						"noFunctionAssign": "off",
-						"noImportAssign": "off",
-						"noRedeclare": "off",
-						"noUnsafeNegation": "off",
-						"useGetterReturn": "off"
-					}
-				}
-			}
-		},
-		{
-			"include": [".prettierrc", "*.json", ".eslintrc", "*.yml"],
+			"include": ["*.json", "*.yml"],
 			"formatter": { "indentWidth": 2 }
 		}
 	]
