@@ -2,7 +2,17 @@
 	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
 	"files": { "ignoreUnknown": false, "ignore": [] },
-	"formatter": { "enabled": true, "indentStyle": "tab" },
+	"formatter": {
+		"enabled": true,
+		"useEditorconfig": true,
+		"formatWithErrors": false,
+		"indentStyle": "space",
+		"indentWidth": 4,
+		"lineEnding": "lf",
+		"lineWidth": 80,
+		"attributePosition": "auto",
+		"bracketSpacing": true
+	},
 	"organizeImports": { "enabled": true },
 	"linter": {
 		"enabled": true,
@@ -49,7 +59,19 @@
 			}
 		}
 	},
-	"javascript": { "formatter": { "quoteStyle": "double" } },
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"quoteStyle": "single",
+			"attributePosition": "auto",
+			"bracketSpacing": true
+		}
+	},
 	"overrides": [
 		{
 			"include": ["*.ts", "*.tsx", "*.mts", "*.cts"],
@@ -82,6 +104,10 @@
 					}
 				}
 			}
+		},
+		{
+			"include": [".prettierrc", "*.json", ".eslintrc", "*.yml"],
+			"formatter": { "indentWidth": 2 }
 		}
 	]
 }
