@@ -75,7 +75,7 @@
     "remix-auth": "3.7.0",
     "ts-node": "10.9.2",
     "tsup": "8.3.5",
-    "typescript": "5.3.3",
+    "typescript": "5.7.2",
     "vitest": "1.6.0"
   },
   "dependencies": {
