@@ -12,8 +12,8 @@
     "build": "tsup",
     "typecheck": "tsc",
     "typecheck:attw": "attw --pack .",
-    "lint": "eslint --ext .ts,.tsx src/",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix .",
     "lint:publint": "publint",
     "test": "vitest --run",
     "test:watch": "vitest --watch",
@@ -21,13 +21,7 @@
     "test:coverage": "npm run test -- --coverage",
     "release": "npm run build && changeset publish"
   },
-  "keywords": [
-    "remix",
-    "remix-auth",
-    "auth",
-    "authentication",
-    "strategy"
-  ],
+  "keywords": ["remix", "remix-auth", "auth", "authentication", "strategy"],
   "license": "MIT",
   "exports": {
     ".": {
@@ -41,11 +35,7 @@
       "default": "./build/index.mjs"
     }
   },
-  "files": [
-    "build",
-    "package.json",
-    "README.md"
-  ],
+  "files": ["build", "package.json", "README.md"],
   "peerDependencies": {
     "@remix-run/server-runtime": ">=1.1.0",
     "remix-auth": ">=3.2.2"
@@ -56,21 +46,14 @@
     "@babel/preset-env": "7.23.6",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
+    "@biomejs/biome": "1.9.4",
     "@changesets/cli": "2.27.10",
     "@remix-run/node": "2.15.1",
     "@remix-run/react": "2.15.1",
     "@remix-run/server-runtime": "2.15.1",
     "@total-typescript/tsconfig": "^1.0.4",
-    "@typescript-eslint/eslint-plugin": "6.21.0",
-    "@typescript-eslint/parser": "6.21.0",
     "c8": "8.0.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-unicorn": "50.0.1",
-    "prettier": "3.4.2",
     "publint": "0.2.12",
     "react": "18.3.1",
     "remix-auth": "3.7.0",
