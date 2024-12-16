@@ -60,6 +60,7 @@
     "@remix-run/node": "2.15.1",
     "@remix-run/react": "2.15.1",
     "@remix-run/server-runtime": "2.15.1",
+    "@total-typescript/tsconfig": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "c8": "8.0.1",
