@@ -1,17 +1,10 @@
 {
+  "extends": "@total-typescript/tsconfig/bundler/dom/library",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "target": "ES2019",
-    "strict": true,
-    "skipLibCheck": true,
-    "verbatimModuleSyntax": true,
-
-    // tsup handles building
-    "noEmit": true
+    /* TODO: Remove these overrides */
+    "noImplicitOverride": false,
+    "noUncheckedIndexedAccess": false
   },
-
   "exclude": ["node_modules"],
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
