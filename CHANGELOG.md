@@ -1,5 +1,17 @@
 ## [1.2.9](https://github.com/JosteinKringlen/remix-auth-spotify/compare/v1.2.8...v1.2.9) (2023-02-06)
 
+## 2.0.0
+
+### Major Changes
+
+- de937c4: Minimum requirement for Node set to v20.
+
+  BREAKING CHANGE: The package now requires Node.js v20 or higher.
+
+  WHY: To ensure compatibility with modern Node.js features and maintain security through active LTS versions.
+
+  HOW TO UPDATE: Upgrade your Node.js environment to version 20 or higher.
+
 ## 1.3.2
 
 ### Patch Changes
