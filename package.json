@@ -56,7 +56,7 @@
     "@babel/preset-env": "7.23.6",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@changesets/cli": "2.27.1",
+    "@changesets/cli": "2.27.10",
     "@remix-run/node": "2.4.1",
     "@remix-run/react": "2.4.1",
     "@remix-run/server-runtime": "2.4.1",
