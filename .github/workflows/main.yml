@@ -1,127 +1,127 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
 
-      - name: Use Node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
 
-      - name: Build
-        run: npm run build
+            - name: Build
+              run: npm run build
 
-  typecheck:
-    name: Typechecker
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    typecheck:
+        name: Typechecker
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
 
-      - name: Use Node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
 
-      - name: Typecheck
-        run: npm run typecheck
+            - name: Typecheck
+              run: npm run typecheck
 
-  test:
-    name: Unit and Integration Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    test:
+        name: Unit and Integration Tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
 
-      - name: Use Node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
 
-      - name: Test
-        run: npm run test
+            - name: Test
+              run: npm run test
 
-  lint:
-    name: Linter
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    lint:
+        name: Linter
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
 
-      - name: Use Node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
 
-      - name: Build
-        run: npm run build
+            - name: Build
+              run: npm run build
 
-      - name: Lint
-        run: npm run lint
+            - name: Lint
+              run: npm run lint
 
-  arethetypeswrong:
-    name: ʦ Are The Types Wrong?
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+    arethetypeswrong:
+        name: ʦ Are The Types Wrong?
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⬇️ Checkout repo
+              uses: actions/checkout@v4
 
-      - name: ⎔ Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: ⎔ Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: 📥 Install deps
-        uses: bahmutov/npm-install@v1
+            - name: 📥 Install deps
+              uses: bahmutov/npm-install@v1
 
-      - name: 🏗️ Build
-        run: npm run build
+            - name: 🏗️ Build
+              run: npm run build
 
-      - name: ʦ ATTW
-        run: npm run typecheck:attw
+            - name: ʦ ATTW
+              run: npm run typecheck:attw
 
-  publint:
-    name: 📖 Publint
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+    publint:
+        name: 📖 Publint
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⬇️ Checkout repo
+              uses: actions/checkout@v4
 
-      - name: ⎔ Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: ⎔ Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - name: 📥 Install deps
-        uses: bahmutov/npm-install@v1
+            - name: 📥 Install deps
+              uses: bahmutov/npm-install@v1
 
-      - name: 🏗️ Build
-        run: npm run build
+            - name: 🏗️ Build
+              run: npm run build
 
-      - name: 📖 Publint
-        run: npm run lint:publint
+            - name: 📖 Publint
+              run: npm run lint:publint
