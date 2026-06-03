@@ -50,7 +50,7 @@
     "@changesets/cli": "2.27.10",
     "@remix-run/node": "2.15.1",
     "@remix-run/react": "2.15.1",
-    "@remix-run/server-runtime": "2.15.1",
+    "@remix-run/server-runtime": "2.17.5",
     "@total-typescript/tsconfig": "1.0.4",
     "c8": "8.0.1",
     "cz-conventional-changelog": "3.3.0",
