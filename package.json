@@ -58,7 +58,7 @@
     "react": "18.3.1",
     "remix-auth": "3.7.0",
     "ts-node": "10.9.2",
-    "tsup": "8.3.5",
+    "tsup": "8.5.1",
     "typescript": "5.7.2",
     "vitest": "2.1.8"
   },
