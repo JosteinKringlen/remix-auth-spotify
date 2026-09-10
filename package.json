@@ -43,9 +43,9 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "0.17.1",
     "@babel/core": "7.23.6",
-    "@babel/preset-env": "7.23.6",
-    "@babel/preset-react": "7.23.3",
-    "@babel/preset-typescript": "7.23.3",
+    "@babel/preset-env": "7.29.7",
+    "@babel/preset-react": "7.29.7",
+    "@babel/preset-typescript": "7.29.7",
     "@biomejs/biome": "1.9.4",
     "@changesets/cli": "2.27.10",
     "@remix-run/node": "2.15.1",
